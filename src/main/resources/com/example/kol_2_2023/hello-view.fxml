@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kol_2_2023.HelloController">
+    <children>
+        <TitledPane animated="false" collapsible="false" text="Connection" VBox.vgrow="NEVER">
+            <content>
+                <HBox alignment="CENTER" spacing="5.0">
+                    <children>
+                        <Label text="Address"/>
+                        <TextField fx:id="addressField" text="localhost"/>
+                        <Label text="Port"/>
+                        <TextField fx:id="portField" text="5000"/>
+                        <Button mnemonicParsing="false" onAction="#onStartServerClicked" text="Start Server and Connect"/>
+                        <Button mnemonicParsing="false" onAction="#onConnectClicked" text="Connect"/>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+        <TitledPane animated="false" collapsible="false" maxHeight="Infinity" text="Canvas" VBox.vgrow="ALWAYS">
+            <content>
+                <VBox alignment="TOP_CENTER" maxHeight="Infinity" spacing="5.0">
+                    <children>
+                        <HBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label text="Color"/>
+                                <ColorPicker fx:id="colorPicker">
+                                    <value>
+                                        <Color red="0.729411780834198" green="0.8549019694328308" blue="0.3333333432674408"/>
+                                    </value>
+                                </ColorPicker>
+                                <Label text="Radius"/>
+                                <Slider fx:id="radiusSlider" blockIncrement="5.0" showTickLabels="true" showTickMarks="true" value="5.0" HBox.hgrow="ALWAYS"/>
+                            </children>
+                        </HBox>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onMouseClicked" prefHeight="514.0" prefWidth="514.0" style="-fx-background-color: white; -fx-border-color: black;">
+                            <children>
+                                <Canvas fx:id="canvas" height="512.0" layoutX="1.0" layoutY="1.0" width="512.0"/>
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>
